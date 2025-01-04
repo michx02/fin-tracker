@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{%block title%} dashboard {%endblock%}
+
+
+{%block content%}
+
+    <div class="greeting">
+        <h4> Howdy, <i> {{greeting['first_name']}}</i></h4> 
+        
+    </div>
+
+    <div class="balance">
+        <h3> CURRENT BALANCE: {{balance['difference']}}</h3>
+    </div>
+
+    <div class="this_month">
+        <p>Income This Month:   {{month_income['income_month']}} </p>
+        <p>Expenses This Month: {{month_expenses['expenses_month']}}</p>
+        <p>Saving Goals: </p>
+        <p>On-Track: </p>
+    </div>
+
+    <a href="/transaction"><button> View Your transactions</button> </a>
+
+    <BR/>
+    <br/>
+
+    <div class="set_goal">
+        <form method="POST">
+            <label for="save_amount"> Saving Goal(This Month): </label>
+            <input type="number" name="save_amount">
+        </form>
+
+    </div>
+
+    <div class="add_transaction">
+        <form method="POST">
+            
+        </form>
+    </div>
+    
+
+    <a href="logout"><button>Log out</button></a>
+
+{%endblock%}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{%block title%} Fin Tracker {%endblock%}</title>
+    </head>
+
+    <body>
+        <h1>FIN-TRACKER For You...</h1>
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+        <ul>
+            {% for category, message in messages %}
+                <li class="flash-{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        {%block content%}
+
+        <p> DEfaults will be heree</p>
+
+        {%endblock%}
+
+        <footer><P> &copy; Michael Mvano</P></footer>
+
+    </body>
+
+</html>
